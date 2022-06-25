@@ -1,0 +1,45 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+p:last-child {
+  margin-bottom: 0 !important;
+}
+html {
+  font-size: 62.5%;
+  /* (62.5/100) * 16 = 10px */
+}
+
+body {
+  min-height: 100vh;
+  font-size: 1.6rem;
+  background-color: @app-bg;
+  color: @primary-clr
+}
+
+* {
+  ::-webkit-scrollbar {
+    width: @scroll-wd;
+    height: @scroll-ht;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: @scroll-track-clr;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: @scroll-thumb-clr;
+    border-radius: 2rem;
+    z-index: -1;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: @scroll-thumb-hover-clr;
+  }
+}

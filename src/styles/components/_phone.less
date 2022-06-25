@@ -1,0 +1,38 @@
+.phone-number {
+    &-input {
+        left: 6%;
+        width: 67%;
+    }
+    &__container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        .react-tel-input {
+            input {
+                color: @primary-clr  !important;
+                border: none !important;
+                background: @input-bg  !important;
+                height: 5rem !important;
+
+                &:focus {
+                    background: @app-bg  !important;
+                    border: 1px solid @input-border  !important;
+                }
+            }
+
+            .form-control {
+                height: 3.4rem !important;
+                width: 10rem !important;
+                padding: 0rem !important;
+                padding-left: 5rem !important;
+            }
+
+            .country-list {
+                color: @black;
+            }
+        }
+    }
+}
+.react-tel-input {
+    width: 27% !important;
+}
