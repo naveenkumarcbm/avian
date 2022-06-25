@@ -2,6 +2,7 @@
   "name": "avian",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://naveenkumarcbm.github.io/avian",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@craco/craco": "^6.4.3",
@@ -19,7 +20,9 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test"
+    "test": "craco test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "craco-less": "^1.20.0"
+    "craco-less": "^1.20.0",
+    "gh-pages": "^4.0.0"
   }
 }
