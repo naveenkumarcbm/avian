@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/avian/static/css/main.9904fd84.chunk.css",
+    "main.js": "/avian/static/js/main.a2523393.chunk.js",
+    "main.js.map": "/avian/static/js/main.a2523393.chunk.js.map",
+    "runtime-main.js": "/avian/static/js/runtime-main.e3fef52f.js",
+    "runtime-main.js.map": "/avian/static/js/runtime-main.e3fef52f.js.map",
+    "static/css/2.17bad033.chunk.css": "/avian/static/css/2.17bad033.chunk.css",
+    "static/js/2.aa637755.chunk.js": "/avian/static/js/2.aa637755.chunk.js",
+    "static/js/2.aa637755.chunk.js.map": "/avian/static/js/2.aa637755.chunk.js.map",
+    "static/js/3.a1dde468.chunk.js": "/avian/static/js/3.a1dde468.chunk.js",
+    "static/js/3.a1dde468.chunk.js.map": "/avian/static/js/3.a1dde468.chunk.js.map",
+    "index.html": "/avian/index.html",
+    "static/css/2.17bad033.chunk.css.map": "/avian/static/css/2.17bad033.chunk.css.map",
+    "static/css/main.9904fd84.chunk.css.map": "/avian/static/css/main.9904fd84.chunk.css.map",
+    "static/js/2.aa637755.chunk.js.LICENSE.txt": "/avian/static/js/2.aa637755.chunk.js.LICENSE.txt",
+    "static/media/registration-complete.f0e2103d.png": "/avian/static/media/registration-complete.f0e2103d.png",
+    "static/media/registration.8781ced6.png": "/avian/static/media/registration.8781ced6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e3fef52f.js",
+    "static/css/2.17bad033.chunk.css",
+    "static/js/2.aa637755.chunk.js",
+    "static/css/main.9904fd84.chunk.css",
+    "static/js/main.a2523393.chunk.js"
+  ]
+}
