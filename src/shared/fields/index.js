@@ -1,5 +1,5 @@
 import { Col, Form, Input, Select, Row, DatePicker } from "antd";
-import { FIELD_CONSTANTS } from "../../constants/form.constants";
+import { FIELD_CONSTANTS } from "../../constants/app/app.constants";
 
 const { Option } = Select;
 
@@ -44,6 +44,7 @@ export default function getFields(field, object = "", isDisplay = false) {
           rules={field.rules}
         >
           <Select
+            mode={field.mode}
             prefix={field.prefix}
             placeholder={field.placeholder}
             allowClear
@@ -66,11 +67,25 @@ export default function getFields(field, object = "", isDisplay = false) {
           tooltip={field.tooltip}
           rules={field.rules}
           initialValue={object[field.name]}
-          hasFeedback
         >
           <Input prefix={field.prefix} placeholder={field.placeholder} />
         </Form.Item>
       );
+    case FIELD_CONSTANTS.EMAIL:
+        return (
+          <Form.Item
+            key={`${field.name}_id`}
+            colon={true}
+            label={field.label}
+            name={field.name}
+            tooltip={field.tooltip}
+            rules={field.rules}
+            initialValue={object[field.name]}
+
+          >
+            <Input type={'email'} prefix={field.prefix} placeholder={field.placeholder} />
+          </Form.Item>
+        );
     case FIELD_CONSTANTS.DATE:
       return (
         <Form.Item
@@ -81,7 +96,6 @@ export default function getFields(field, object = "", isDisplay = false) {
           tooltip={field.tooltip}
           rules={field.rules}
           initialValue={object[field.name]}
-          hasFeedback
         >
           <DatePicker
             style={{ width: "100%" }}
@@ -102,7 +116,6 @@ export default function getFields(field, object = "", isDisplay = false) {
           dependencies={field.dependencies}
           rules={field.rules}
           initialValue={object[field.name]}
-          hasFeedback
         >
           <Input
             type={FIELD_CONSTANTS.PASSWORD}
@@ -121,7 +134,6 @@ export default function getFields(field, object = "", isDisplay = false) {
           tooltip={field.tooltip}
           rules={field.rules}
           initialValue={object[field.name]}
-          hasFeedback
         >
           <Input
             type={FIELD_CONSTANTS.PASSWORD}

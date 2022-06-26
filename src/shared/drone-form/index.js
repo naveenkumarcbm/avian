@@ -1,5 +1,5 @@
 import { DeleteOutlined } from "@ant-design/icons";
-import { DRONE_FORM } from "../../constants/form.constants";
+import { DRONE_FORM } from "../../constants/form/form.constants";
 import getFields from "../fields";
 
 const DroneForm = ({ index = 0 }) => {

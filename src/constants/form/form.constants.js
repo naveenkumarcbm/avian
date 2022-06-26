@@ -1,15 +1,4 @@
-export const FIELD_CONSTANTS = {
-  INPUT: "input",
-  RADIO: "radio",
-  UPLOAD: "upload",
-  DATE: "date",
-  PASSWORD: "password",
-  DEPENDENT: "dependent", // should have dependencies=['field'], rule=[{},(val)=>{}]
-  TEXTAREA: "textarea",
-  SELECT: "select",
-  SWITCH: "switch",
-  ROW: "row",
-};
+import { FIELD_CONSTANTS } from "../app/app.constants";
 
 const OPTIONS = [
   {

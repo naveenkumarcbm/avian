@@ -1,5 +1,5 @@
 import { cloneElement, useState } from "react";
-import { ADDRESS_FORM, PILOT_FORM } from "../../constants/form.constants";
+import { ADDRESS_FORM, PILOT_FORM } from "../../constants/form/form.constants";
 import RegistrationComplete from "../../view/RegistrationComplete";
 import Droneregistration from "../../view/DroneRegistration";
 import Formregistration from "../../view/Formregistration";

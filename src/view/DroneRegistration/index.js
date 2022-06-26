@@ -1,10 +1,10 @@
 import { Radio, Form as AForm, Button } from "antd";
 import { useState } from "react";
 import Form from "../../compoent/Form";
-import { DRONE_FORM } from "../../constants/form.constants";
 import DroneForm from "../../shared/drone-form";
 import { PlusCircleOutlined } from "@ant-design/icons";
-const Droneregistration = ({ next }) => {
+
+const Droneregistration = ({ config, next }) => {
   const [hasDrone, setHasDrone] = useState(1);
   const [droneList, setDroneList] = useState([1]);
 
@@ -38,9 +38,9 @@ const Droneregistration = ({ next }) => {
 
   return (
     <div>
-      <h1>{DRONE_FORM.title}</h1>
-      <p>{DRONE_FORM.subTitle}</p>
-      <span>{DRONE_FORM.description}</span>
+      <h1>{config.title}</h1>
+      <p>{config.subTitle}</p>
+      <span>{config.description}</span>
       <Form
         name="drone-form"
         onFinish={onFinish}
@@ -55,7 +55,7 @@ const Droneregistration = ({ next }) => {
         {getDroneForm()}
         <Button type="link" onClick={addDrones}>
           <PlusCircleOutlined />
-          {DRONE_FORM.addMoreText}
+          {config.addMoreText}
         </Button>
         <Button block={true} type="primary" htmlType="submit">Register</Button>
       </Form>

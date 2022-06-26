@@ -5,7 +5,7 @@ import "react-phone-input-2/lib/bootstrap.css";
 import {
   DEFAULT_COUNTRY,
   PREFRRED_COUNTRIES,
-} from "../../constants/app.constants";
+} from "../../constants/app/app.constants";
 
 const Phonenumber = ({ placeholder, onChange }) => {
   const [country, setCountry] = useState(DEFAULT_COUNTRY);
@@ -41,13 +41,13 @@ const Phonenumber = ({ placeholder, onChange }) => {
       />
       <Input
         type={"tel"}
-        required={true}
+        // required={true}
         value={phoneNumber}
         className="phone-number-input"
         placeholder={placeholder}
         onChange={onPhoneInputChange}
-        minLength={10}
-        maxLength={15}
+        // minLength={10}
+        // maxLength={15}
       />
     </div>
   );

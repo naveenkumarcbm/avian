@@ -1,11 +1,17 @@
 import React from "react";
-import Stepper from "./shared/stepper";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { LOGIN_ROUTE, ROUTES, ROUTE_PATH } from "./config/routes.config";
 
 function App() {
   return (
-    <>
-      <Stepper />
-    </>
+    <BrowserRouter>
+      <Routes>
+        {ROUTES.map((route) => (
+          <Route {...route} />
+        ))}
+        <Route path={ROUTE_PATH.HOME} element={LOGIN_ROUTE.element} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

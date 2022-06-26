@@ -1,5 +1,5 @@
 import { Button, Image } from "antd";
-import { REGISTRATION_COMPLETE } from "../../constants/form.constants";
+import { REGISTRATION_COMPLETE } from "../../constants/form/form.constants";
 import registrationCompelete from "../../assets/png/registration-complete.png";
 
 const RegistrationComplete = ({ next }) => {

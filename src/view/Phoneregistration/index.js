@@ -1,7 +1,6 @@
 import { Button, Image } from "antd";
 import Form from "../../compoent/Form";
 import Phonenumber from "../../compoent/phone";
-import { PHONE_FORM } from "../../constants/form.constants";
 import registration from "../../assets/png/registration.png";
 
 const styles = {
@@ -14,7 +13,7 @@ const styles = {
   },
 };
 
-const Phoneregistration = ({ next }) => {
+const Phoneregistration = ({ config, next }) => {
   const onFinish = (values) => {
     console.log("Success:", values);
     next();
@@ -27,17 +26,17 @@ const Phoneregistration = ({ next }) => {
   return (
     <div className="registration__content">
       <Image preview={false} src={registration} />
-      <h1>{PHONE_FORM.title}</h1>
-      <p>{PHONE_FORM.subTitle}</p>
+      <h1>{config.title}</h1>
+      <p>{config.subTitle}</p>
       <Form
         name="phone-number-form"
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
       >
-        <label htmlFor="phone-number">{PHONE_FORM.phone.label}</label>
+        <label htmlFor="phone-number">{config.phone.label}</label>
         <Phonenumber
           id="phone-number"
-          placeholder={PHONE_FORM.phone.placeholder}
+          placeholder={config.phone.placeholder}
           onChange={(pn) => console.log(pn)}
         />
         <Button
