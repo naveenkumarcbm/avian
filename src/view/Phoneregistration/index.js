@@ -2,6 +2,8 @@ import { Button, Image } from "antd";
 import Form from "../../compoent/Form";
 import Phonenumber from "../../compoent/phone";
 import registration from "../../assets/png/registration.png";
+import { Link } from "react-router-dom";
+import { ROUTE_PATH } from "../../config/routes.config";
 
 const styles = {
   btn: {
@@ -47,7 +49,7 @@ const Phoneregistration = ({ config, next }) => {
         >
           Continue
         </Button>
-        <p style={styles.p}>Registered? Login</p>
+        <p style={styles.p}>Registered? <Link to={ROUTE_PATH.LOGIN}></Link>Login</p>
       </Form>
     </div>
   );
