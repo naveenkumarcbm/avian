@@ -269,10 +269,14 @@ export const PERSONAL_DTL ={
     },
     {
       type: FIELD_CONSTANTS.SELECT,
-      name: "sex",
-      label: "Sex",
+      name: "gender",
+      label: "Gender",
       required: true,
       options: [
+        {
+          value: "Non-Conforming",
+          label: "Non-Conforming",
+        },
         {
           value: "Male",
           label: "Male",
@@ -282,11 +286,11 @@ export const PERSONAL_DTL ={
           label: "Female",
         }
       ],
-      placeholder: "Select sex",
+      placeholder: "Select gender",
       rules: [
         {
           required: true,
-          message: "Please select sex",
+          message: "Please select gender",
         },
       ],
     },

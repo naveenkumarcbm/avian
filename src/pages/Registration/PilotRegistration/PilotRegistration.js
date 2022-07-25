@@ -46,27 +46,29 @@ const steps = [
 ];
 
 const PilotRegistration = () => {
-  const [index, setIndex] = useState(0);
+  const [currIndex, setCurrIndex] = useState(0);
+  const [pilotForm, setPilotForm] = useState({});
 
-  const next = () => {
-    setIndex(index + 1);
+  const next = (payload) => {
+    setCurrIndex(currIndex + 1);
+    setPilotForm(_prevForm => ({ ..._prevForm, ...payload}));
   };
 
   const prev = () => {
-    setIndex(index - 1);
+    setCurrIndex(currIndex - 1);
   };
 
-  const step = getCurrenStepId(steps, index);
+  const step = getCurrenStepId(steps, currIndex);
   const totalSteps = getTotalSteps(steps);
-  const showBack = getShowButton(steps, index);
-  console.log({ showBack });
+  const showBack = getShowButton(steps, currIndex);
+  console.log({ currIndex, showBack, pilotForm });
   return (
     <>
       <div className="registration__container">
         <BackButton show={showBack} onClick={prev}>
           <ArrowLeftOutlined />
         </BackButton>
-        {cloneElement(steps[index].content, { next, prev, step, totalSteps })}
+        {cloneElement(steps[currIndex].content, { next, prev, step, totalSteps, defaultValues: pilotForm })}
       </div>
     </>
   );

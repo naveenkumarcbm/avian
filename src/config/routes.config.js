@@ -6,9 +6,9 @@ import PilotRegistration from "../pages/Registration/PilotRegistration/PilotRegi
 export const ROUTE_PATH = {
   HOME: "/",
   LOGIN: "/login",
-  REGISTER_PIOLET: "/register/piolet",
+  REGISTER_PILOT: "/register/pilot",
   REGISTER_COMPANY: "/register/company",
-  LIST_PIOLET: "/list/piolet",
+  LIST_PILOT: "/list/pilot",
   LIST_COMPANY: "/list/company",
 };
 
@@ -19,10 +19,10 @@ export const LOGIN_ROUTE = {
   element: <Login />,
 };
 
-export const REGISTER_PIOLET_ROUTE = {
-  path: ROUTE_PATH.REGISTER_PIOLET,
-  key: "register-piolet",
-  label: "Piolet Registration",
+export const REGISTER_PILOT_ROUTE = {
+  path: ROUTE_PATH.REGISTER_PILOT,
+  key: "register-pilot",
+  label: "pilot Registration",
   element: <PilotRegistration />,
 };
 
@@ -42,7 +42,7 @@ export const COMPANY_LIST_ROUTE = {
 
 export const ROUTES = [
     COMPANY_LIST_ROUTE,
-    REGISTER_PIOLET_ROUTE,
+    REGISTER_PILOT_ROUTE,
     REGISTER_COMPANY_ROUTE,
     LOGIN_ROUTE
 ];

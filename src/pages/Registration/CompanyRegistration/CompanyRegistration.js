@@ -10,7 +10,7 @@ import { ArrowLeftOutlined } from "@ant-design/icons";
 const steps = [
   {
     id: 1,
-    content: <Formregistration config={COMAPNY_EMAIL_FORM} />,
+    content: <Formregistration config={COMAPNY_EMAIL_FORM} showBackToLogin={true} />,
   },
   {
     id: 2,
@@ -32,9 +32,11 @@ const steps = [
 
 const CompanyRegistration = () => {
   const [index, setIndex] = useState(0);
+  const [companyForm, setCompanyForm] = useState({});
 
-  const next = () => {
+  const next = (payload) => {
     setIndex(index + 1);
+    setCompanyForm(_prevForm => ({ ..._prevForm, ...payload}));
   };
 
   const prev = () => {
@@ -44,14 +46,14 @@ const CompanyRegistration = () => {
   const step = getCurrenStepId(steps, index);
   const totalSteps = getTotalSteps(steps);
   const showBack = getShowButton(steps, index);
-  console.log({ showBack });
+  console.log({ showBack, companyForm });
   return (
     <>
       <div className="registration__container">
         <BackButton show={showBack} onClick={prev}>
           <ArrowLeftOutlined />
         </BackButton>
-        {cloneElement(steps[index].content, { next, prev, step, totalSteps })}
+        {cloneElement(steps[index].content, { next, prev, step, totalSteps, defaultValues: companyForm })}
       </div>
     </>
   );

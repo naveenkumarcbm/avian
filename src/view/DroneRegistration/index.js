@@ -1,17 +1,13 @@
 import { Radio, Form as AForm, Button } from "antd";
 import { useState } from "react";
 import Form from "../../compoent/Form";
-import DroneForm from "../../shared/drone-form";
-import { PlusCircleOutlined } from "@ant-design/icons";
+import MultiDroneForm from "./MultiDroneForm";
 
 const Droneregistration = ({ config, next }) => {
   const [hasDrone, setHasDrone] = useState(1);
-  const [droneList, setDroneList] = useState([1]);
 
   const onFinish = (values) => {
-    console.log("Success:", values);
-    if(next)
-    next();
+    if (next) next(values);
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -19,21 +15,7 @@ const Droneregistration = ({ config, next }) => {
   };
 
   const onChange = (e) => {
-    console.log("radio checked", e.target.value);
     setHasDrone(e.target.value);
-  };
-
-  const addDrones = () => setDroneList([...droneList, droneList.length]);
-
-  const getDroneForm = () => {
-    if (!hasDrone) return;
-    return (
-      <div>
-        {droneList.map((drone, idx) => (
-          <DroneForm key={`drone-${idx}`} />
-        ))}
-      </div>
-    );
   };
 
   return (
@@ -52,12 +34,11 @@ const Droneregistration = ({ config, next }) => {
             <Radio value={0}>No</Radio>
           </Radio.Group>
         </AForm.Item>
-        {getDroneForm()}
-        <Button type="link" onClick={addDrones}>
-          <PlusCircleOutlined />
-          {config.addMoreText}
+        
+        {hasDrone ? <MultiDroneForm addMoreText={config.addMoreText} /> : null}
+        <Button block={true} type="primary" htmlType="submit">
+          Register
         </Button>
-        <Button block={true} type="primary" htmlType="submit">Register</Button>
       </Form>
     </div>
   );

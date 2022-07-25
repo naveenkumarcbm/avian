@@ -4,6 +4,7 @@ import Phonenumber from "../../compoent/phone";
 import registration from "../../assets/png/registration.png";
 import { Link } from "react-router-dom";
 import { ROUTE_PATH } from "../../config/routes.config";
+import { useState } from "react";
 
 const styles = {
   btn: {
@@ -15,15 +16,20 @@ const styles = {
   },
 };
 
-const Phoneregistration = ({ config, next }) => {
-  const onFinish = (values) => {
-    console.log("Success:", values);
-    next();
+const Phoneregistration = ({ config, next, defaultValues }) => {
+  const [phone, setPhone] = useState({});
+  const onFinish = () => {
+    next(phone);
   };
 
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
+
+  const onPhoneChange = (phoneObj) => {
+    console.log(phoneObj);
+    setPhone(phoneObj);
+  }
 
   return (
     <div className="registration__content">
@@ -38,8 +44,9 @@ const Phoneregistration = ({ config, next }) => {
         <label htmlFor="phone-number">{config.phone.label}</label>
         <Phonenumber
           id="phone-number"
+          defaultValues={defaultValues}
           placeholder={config.phone.placeholder}
-          onChange={(pn) => console.log(pn)}
+          onChange={onPhoneChange}
         />
         <Button
           style={styles.btn}
@@ -49,7 +56,7 @@ const Phoneregistration = ({ config, next }) => {
         >
           Continue
         </Button>
-        <p style={styles.p}>Registered? <Link to={ROUTE_PATH.LOGIN}></Link>Login</p>
+        <p style={styles.p}>Registered? <Link to={ROUTE_PATH.LOGIN}>Login</Link></p>
       </Form>
     </div>
   );

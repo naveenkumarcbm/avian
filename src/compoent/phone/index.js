@@ -7,32 +7,33 @@ import {
   PREFRRED_COUNTRIES,
 } from "../../constants/app/app.constants";
 
-const Phonenumber = ({ placeholder, onChange }) => {
-  const [country, setCountry] = useState(DEFAULT_COUNTRY);
-  const [phoneNumber, setPhoneNumber] = useState("");
+const Phonenumber = ({ placeholder, onChange, defaultValues = {} }) => {
+  const [phoneCountry, setPhoneCountry] = useState(
+    defaultValues?.phoneCountry || DEFAULT_COUNTRY
+  );
+  const [phoneNumber, setPhoneNumber] = useState(defaultValues?.phoneNumber);
 
   const onPhoneInputChange = (evt) => {
     const { value: inputValue } = evt.target;
     const reg = /^-?\d*(\.\d*)?$/;
-    if (reg.test(inputValue) || inputValue === '' || inputValue === '-') {
+    if (reg.test(inputValue) || inputValue === "" || inputValue === "-") {
       setPhoneNumber(inputValue);
     }
-    
   };
 
   const onCountryChange = (code, ctryObj) => {
-    setCountry(ctryObj);
+    setPhoneCountry(ctryObj);
   };
 
   useEffect(() => {
-    const phone = { country, phoneNumber };
-    onChange(phone);
-  }, [phoneNumber, country, onChange]);
+    const phone = { phoneCountry, phoneNumber };
+    if (phoneNumber) onChange(phone);
+  }, [phoneNumber, phoneCountry]);
 
   return (
     <div className="phone-number__container">
       <PhoneInput
-        country={DEFAULT_COUNTRY.countryCode}
+        country={phoneCountry.countryCode}
         preferredCountries={PREFRRED_COUNTRIES}
         onChange={onCountryChange}
         inputProps={{
