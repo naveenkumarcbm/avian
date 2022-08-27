@@ -105,7 +105,7 @@ export const ZIPCODE_FIELD = {
 
 export const CERTIFICATE_FIELD = {
   type: FIELD_CONSTANTS.INPUT,
-  name: "certificate",
+  name: "training_cert_number",
   label: "Training certificate number",
   required: true,
   placeholder: "Eneter Training certificate number",
@@ -168,7 +168,7 @@ export const INDUSTRY_FIELD = {
 
 export const LANGUAGE_FIELD = {
   type: FIELD_CONSTANTS.SELECT,
-  name: "language",
+  name: "languages",
   label: "Select Language",
   mode: "multiple",
   required: true,
@@ -184,7 +184,7 @@ export const LANGUAGE_FIELD = {
 
 export const PREFERRED_LOC_FIELD = {
   type: FIELD_CONSTANTS.SELECT,
-  name: "location",
+  name: "prefered_location",
   label: "Predered Service Location",
   mode: "multiple",
   required: true,

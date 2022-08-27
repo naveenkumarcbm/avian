@@ -1,5 +1,5 @@
 import React from "react";
-import { MinusCircleOutlined, PlusCircleOutlined } from "@ant-design/icons";
+import { PlusCircleOutlined } from "@ant-design/icons";
 import { Button, Form } from "antd";
 import DroneForm from "../../shared/drone-form";
 
@@ -10,8 +10,7 @@ const MultiDroneForm = ({ addMoreText }) => {
         <>
           {fields.map((field) => (
             <>
-              <DroneForm key={field.name} field={field} />
-              <MinusCircleOutlined onClick={() => remove(field.name)} />
+              <DroneForm key={field.name} field={field} remove={() => remove(field.name)} />
             </>
           ))}
           <Form.Item>
